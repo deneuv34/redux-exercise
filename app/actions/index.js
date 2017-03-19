@@ -1,5 +1,5 @@
 import * as RecipeActions from './recipes'
 
-export const ActionsCreators = Object.assign({}, 
+export const ActionCreators = Object.assign({}, 
     RecipeActions,
 );
