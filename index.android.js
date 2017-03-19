@@ -9,15 +9,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-
-import reducer from './app/reducers';
-
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
+import reducer from './app/reducers';
+import AppContainer from './app/containers/AppContainer';
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__})
 
@@ -33,21 +29,13 @@ const configureStore = (initialState) => {
 
 const store = configureStore({});
 
-class newReduxApp extends Component {
-  render() {
-    return (
-      <View>
-        <Text>cool</Text>
-      </View>
-    );
-  }
-}
-
 
 const App = () => {
-  <Provider store={store}>
-    <newReduxApp />
-  </Provider>
+  return(
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  )
 }
 
 AppRegistry.registerComponent('newReduxApp', () => App);
