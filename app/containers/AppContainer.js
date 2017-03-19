@@ -13,6 +13,10 @@ class AppContainer extends Component {
         this.props.addRecipe();
     }
 
+    subCountRecipe() {
+        this.props.subRecipe();
+    }
+
     render() {
         return(
             <View>
@@ -20,6 +24,9 @@ class AppContainer extends Component {
                     Count This Container: {this.props.recipeCount}
                 </Text>
                 <TouchableOpacity onPress={() => this.addCountRecipe()}>
+                    <Text>COUNT THE CONTAINER</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.subCountRecipe()}>
                     <Text>COUNT THE CONTAINER</Text>
                 </TouchableOpacity>
             </View>

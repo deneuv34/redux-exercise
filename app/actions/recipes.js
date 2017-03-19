@@ -6,3 +6,9 @@ export const addRecipe = () => {
     }
 }
 
+export const subRecipe = () => {
+    return {
+        type: types.SUB_RECIPE,
+    }
+}
+
